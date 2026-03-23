@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Post Title — Your Name</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── TOKENS (keep these identical to index.html) ───── */
+    :root {
+      --bg:        #f7f5f0;
+      --surface:   #ffffff;
+      --ink:       #1a1814;
+      --muted:     #7a7570;
+      --accent:    #c84b2f;
+      --accent2:   #2f6fc8;
+      --border:    #e0dbd3;
+      --serif:     'Lora', Georgia, serif;
+      --sans:      'DM Sans', system-ui, sans-serif;
+      --max:       680px;
+      --radius:    4px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 18px; scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-weight: 300;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* ── NAV (identical to index.html) ─────────────────── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      padding: 0.75rem 0;
+    }
+    nav .wrap {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    nav .site-name {
+      font-family: var(--serif);
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--ink);
+      text-decoration: none;
+      margin-right: auto;
+      letter-spacing: -0.01em;
+    }
+    nav a {
+      font-size: 0.8rem;
+      font-weight: 400;
+      color: var(--muted);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      transition: color 0.15s;
+    }
+    nav a:hover { color: var(--accent); }
+
+    /* ── LAYOUT ─────────────────────────────────────────── */
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* ── POST HEADER ────────────────────────────────────── */
+    .post-header {
+      padding: 3.5rem 0 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .post-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+    .post-meta a {
+      font-size: 0.75rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+    }
+    .post-meta a:hover { color: var(--accent); }
+    .post-meta .sep { color: var(--border); }
+    .post-meta .tag {
+      font-size: 0.65rem;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: color-mix(in srgb, var(--accent) 10%, transparent);
+      border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
+      border-radius: 2px;
+      padding: 0.15em 0.5em;
+    }
+
+    .post-header h1 {
+      font-family: var(--serif);
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      font-weight: 600;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+    }
+
+    /* ── POST BODY ──────────────────────────────────────── */
+    .post-body {
+      padding: 2.5rem 0 4rem;
+      animation: fadeUp 0.4s ease both;
+    }
+
+    /* Paragraphs */
+    .post-body p {
+      margin-bottom: 1.4rem;
+      font-size: 1rem;
+    }
+
+    /* Headings inside the post */
+    .post-body h2 {
+      font-family: var(--serif);
+      font-size: 1.3rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin: 2.5rem 0 0.75rem;
+    }
+    .post-body h3 {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 2rem 0 0.5rem;
+    }
+
+    /* Links inside the post */
+    .post-body a {
+      color: var(--accent2);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .post-body a:hover { color: var(--accent); }
+
+    /* Blockquote */
+    .post-body blockquote {
+      border-left: 3px solid var(--accent);
+      margin: 1.75rem 0;
+      padding: 0.25rem 0 0.25rem 1.25rem;
+      color: var(--muted);
+      font-family: var(--serif);
+      font-style: italic;
+    }
+
+    /* Inline code */
+    .post-body code {
+      font-family: 'Courier New', monospace;
+      font-size: 0.85em;
+      background: var(--border);
+      padding: 0.1em 0.35em;
+      border-radius: 3px;
+    }
+
+    /* Code block */
+    .post-body pre {
+      background: var(--ink);
+      color: #f0ece4;
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      overflow-x: auto;
+      margin: 1.75rem 0;
+      font-size: 0.82rem;
+      line-height: 1.6;
+    }
+    .post-body pre code {
+      background: none;
+      padding: 0;
+      color: inherit;
+      font-size: inherit;
+    }
+
+    /* Images */
+    .post-body img {
+      width: 100%;
+      border-radius: var(--radius);
+      margin: 1.75rem 0;
+      border: 1px solid var(--border);
+    }
+
+    /* Lists */
+    .post-body ul,
+    .post-body ol {
+      margin: 0 0 1.4rem 1.5rem;
+    }
+    .post-body li { margin-bottom: 0.3rem; }
+
+    /* Horizontal rule */
+    .post-body hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2.5rem 0;
+    }
+
+    /* ── POST FOOTER ────────────────────────────────────── */
+    .post-footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .post-footer a {
+      font-size: 0.82rem;
+      color: var(--muted);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: color 0.15s;
+    }
+    .post-footer a:hover { color: var(--accent); }
+    .post-footer .arrow { font-size: 1rem; }
+
+    /* ── SITE FOOTER ────────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 1.5rem 0;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+    footer .wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    footer a { color: var(--muted); }
+    footer a:hover { color: var(--accent); }
+
+    /* ── ANIMATION ──────────────────────────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ── NAV ──────────────────────────────────────────── -->
+  <nav>
+    <div class="wrap">
+      <a class="site-name" href="/">Your Name</a>
+      <a href="/p/">Posts</a>
+      <a href="/about.html">About</a>
+      <a href="/feed.rss">RSS</a>
+    </div>
+  </nav>
+
+  <main>
+    <div class="wrap">
+
+      <!-- ── POST HEADER ──────────────────────────────────
+           Change: the date, the tag (or delete it), and the h1 title
+      ───────────────────────────────────────────────────── -->
+      <header class="post-header">
+        <div class="post-meta">
+          <a href="/p/">← All posts</a>
+          <span class="sep">·</span>
+          <span>March 10, 2025</span>        <!-- ← CHANGE DATE -->
+          <span class="sep">·</span>
+          <span class="tag">tech</span>      <!-- ← CHANGE or DELETE this span -->
+        </div>
+        <h1>Your Post Title Goes Here</h1>   <!-- ← CHANGE TITLE -->
+      </header>
+
+      <!-- ── POST BODY ────────────────────────────────────
+           Write your post between these comments.
+           Delete the example content below and replace it
+           with your own paragraphs, headings, etc.
+      ───────────────────────────────────────────────────── -->
+      <article class="post-body">
+
+        <p>
+          This is your opening paragraph. Write naturally — just wrap each
+          paragraph in <code>&lt;p&gt;</code> tags like this one. You don't
+          need to know much HTML beyond that to get started.
+        </p>
+
+        <p>
+          Keep going. Each new paragraph is its own <code>&lt;p&gt;</code> block.
+          Leave a blank line between them in the code if it helps you read it.
+        </p>
+
+        <h2>This is a section heading</h2>
+
+        <p>
+          Use <code>&lt;h2&gt;</code> when you want to break your post into
+          named sections. Use <code>&lt;h3&gt;</code> for a smaller sub-heading
+          within a section.
+        </p>
+
+        <p>
+          You can link to things like this:
+          <a href="https://example.com">here's a link</a>.
+          Just change the URL and the link text.
+        </p>
+
+        <blockquote>
+          Use a blockquote when you want to pull out a quote or an important
+          idea and give it some visual breathing room.
+        </blockquote>
+
+        <p>
+          You can add a horizontal rule to separate sections visually:
+        </p>
+
+        <hr>
+
+        <p>
+          And here's how a bullet list looks:
+        </p>
+
+        <ul>
+          <li>First item</li>
+          <li>Second item</li>
+          <li>Third item</li>
+        </ul>
+
+        <p>
+          That's really all you need. Delete everything in this
+          <code>&lt;article&gt;</code> block above this line and write your post.
+        </p>
+
+      </article>
+      <!-- ── END POST BODY ─────────────────────────────── -->
+
+      <!-- ── POST FOOTER (prev/next links) ───────────────
+           Update these hrefs and titles to point to the
+           posts that come before and after this one.
+           Delete whichever side doesn't apply (e.g. on
+           your very first post, remove the "Older" link).
+      ───────────────────────────────────────────────────── -->
+      <div class="post-footer">
+        <a href="/p/previous-post-slug">
+          <span class="arrow">←</span> Older post title here
+        </a>
+        <a href="/p/next-post-slug">
+          Newer post title here <span class="arrow">→</span>
+        </a>
+      </div>
+
+    </div><!-- /.wrap -->
+  </main>
+
+  <!-- ── SITE FOOTER ───────────────────────────────────── -->
+  <footer>
+    <div class="wrap">
+      <span>© 2025 Your Name</span>
+      <span>
+        <a href="/feed.rss">RSS</a> ·
+        <a href="mailto:you@example.com">Email</a>
+      </span>
+    </div>
+  </footer>
+
+</body>
+</html>
