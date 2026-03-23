@@ -1,1 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Life — Rio Thomas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
 
+  <style>
+    :root {
+      --bg:      #f7f5f0;
+      --surface: #ffffff;
+      --ink:     #1a1814;
+      --muted:   #7a7570;
+      --accent:  #c84b2f;
+      --accent2: #2f6fc8;
+      --border:  #e0dbd3;
+      --serif:   'Lora', Georgia, serif;
+      --sans:    'DM Sans', system-ui, sans-serif;
+      --max:     680px;
+      --radius:  4px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 18px; scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-weight: 300;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* ── NAV ────────────────────────────────────────────── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      padding: 0.75rem 0;
+    }
+    nav .wrap { display: flex; align-items: center; gap: 1.5rem; }
+    nav .site-name {
+      font-family: var(--serif);
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--ink);
+      text-decoration: none;
+      margin-right: auto;
+      letter-spacing: -0.01em;
+    }
+    nav a {
+      font-size: 0.8rem;
+      font-weight: 400;
+      color: var(--muted);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      transition: color 0.15s;
+    }
+    nav a:hover { color: var(--accent); }
+
+    /* ── PAGE HEADER ────────────────────────────────────── */
+    .page-header {
+      padding: 3.5rem 0 2.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      margin-bottom: 1.25rem;
+      transition: color 0.15s;
+    }
+    .back-link:hover { color: var(--accent); }
+    .page-header h1 {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 4vw, 2.4rem);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+    }
+    .page-header h1 span { color: var(--accent); }
+    .page-header p {
+      color: var(--muted);
+      font-size: 0.9rem;
+      max-width: 480px;
+    }
+
+    /* ── OTHER TOPICS ───────────────────────────────────── */
+    .other-topics {
+      padding: 1.25rem 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .other-topics span {
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-right: 0.25rem;
+    }
+    .topic-pill {
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      padding: 0.2em 0.6em;
+      text-decoration: none;
+      transition: all 0.15s;
+    }
+    .topic-pill:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+    .topic-pill.active {
+      color: var(--ink);
+      border-color: var(--ink);
+      font-weight: 500;
+    }
+
+    /* ── POST LIST ──────────────────────────────────────── */
+    .posts-section { padding: 2rem 0 4rem; }
+
+    .posts-label {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .year-group { margin-bottom: 2.5rem; }
+    .year-heading {
+      font-family: var(--serif);
+      font-size: 0.85rem;
+      font-weight: 400;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .post-row {
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+      padding: 0.65rem 0;
+      border-bottom: 1px solid var(--border);
+      animation: fadeUp 0.4s ease both;
+    }
+    .post-row:hover .post-title { color: var(--accent); }
+
+    .post-date {
+      font-size: 0.75rem;
+      color: var(--muted);
+      white-space: nowrap;
+      min-width: 72px;
+      flex-shrink: 0;
+    }
+    .post-title {
+      font-family: var(--serif);
+      font-size: 0.98rem;
+      color: var(--ink);
+      text-decoration: none;
+      transition: color 0.15s;
+      line-height: 1.4;
+    }
+
+    .post-row:nth-child(1)  { animation-delay: 0.02s }
+    .post-row:nth-child(2)  { animation-delay: 0.04s }
+    .post-row:nth-child(3)  { animation-delay: 0.06s }
+    .post-row:nth-child(4)  { animation-delay: 0.08s }
+    .post-row:nth-child(5)  { animation-delay: 0.10s }
+    .post-row:nth-child(6)  { animation-delay: 0.12s }
+    .post-row:nth-child(7)  { animation-delay: 0.14s }
+    .post-row:nth-child(8)  { animation-delay: 0.16s }
+
+    /* ── FOOTER ─────────────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 1.5rem 0;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+    footer .wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    footer a { color: var(--muted); }
+    footer a:hover { color: var(--accent); }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(6px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 500px) {
+      .post-date { min-width: 56px; font-size: 0.7rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="wrap">
+      <a class="site-name" href="../index.html">Rio Thomas</a>
+      <a href="../index.html">Posts</a>
+      <a href="../about.html">About</a>
+      <a href="../feed.rss">RSS</a>
+    </div>
+  </nav>
+
+  <main>
+    <div class="wrap">
+
+      <!-- PAGE HEADER
+           Change the h1 title and description per topic.
+           e.g. for ideas.html: "Ideas" / "Questions I keep returning to."
+      -->
+      <header class="page-header">
+        <a class="back-link" href="../index.html">← All posts</a>
+        <h1>Life<span>.</span></h1>
+        <p>Notes on how I live: food, routines, places, observations.</p>
+      </header>
+
+      <!-- OTHER TOPICS
+           Update the href for each pill to point to the right file.
+           Add class="active" to the pill matching the current page.
+      -->
+      <div class="other-topics">
+        <span>Also:</span>
+        <a class="topic-pill" href="ideas.html">Ideas</a>
+        <a class="topic-pill" href="tech.html">Tech</a>
+        <a class="topic-pill" href="projects.html">Projects</a>
+      </div>
+
+      <!-- POST LIST
+           Only include posts tagged "life" here.
+           Copy from index.html — same post-row structure,
+           just without the post-tag span (it's implied by the page).
+
+           HOW TO ADD A POST:
+           Copy a post-row block, update date/href/title,
+           place it at the top of the correct year group.
+           Remember to also add it to index.html.
+      -->
+      <section class="posts-section">
+        <p class="posts-label">All life posts</p>
+
+        <!-- ── 2026 ── -->
+        <div class="year-group">
+          <p class="year-heading">2026</p>
+
+          <div class="post-row">
+            <span class="post-date">Mar 23</span>
+            <a class="post-title" href="../p/the-point-of-a-blog.html">The Point of a Blog</a>
+          </div>
+
+          <!-- Add more 2026 life posts above this line -->
+        </div>
+
+        <!-- ── 2025 ── (delete this group if you have no 2025 life posts yet) -->
+        <div class="year-group">
+          <p class="year-heading">2025</p>
+
+          <div class="post-row">
+            <span class="post-date">Jan 01</span>
+            <a class="post-title" href="../p/post-slug-here.html">A Life Post From 2025</a>
+          </div>
+
+          <!-- Add more 2025 life posts above this line -->
+        </div>
+
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>© 2026 Rio Thomas</span>
+      <span>
+        <a href="../feed.rss">RSS</a> ·
+        <a href="mailto:you@example.com">Email</a>
+      </span>
+    </div>
+  </footer>
+
+</body>
+</html>
