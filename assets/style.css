@@ -372,6 +372,34 @@ nav a.active { color: var(--ink); }
 .post-body hr { border: 0; border-top: 1px solid var(--border); margin: 2rem 0; }
 .post-body img { max-width: 100%; height: auto; border-radius: var(--radius); }
 
+/* ── STACKED POSTS (blog.html) ──────────────────────────── */
+/* scroll-margin keeps the title clear of the sticky nav
+   when you jump to a post from the list. */
+.post, #all-posts { scroll-margin-top: 4rem; }
+.post { border-top: 1px solid var(--border); }
+.post .post-header { border-bottom: 0; padding-bottom: 0; }
+.post .post-meta { margin-bottom: 0.75rem; }
+.post-title-lg {
+  font-family: var(--serif);
+  font-size: clamp(1.6rem, 4vw, 2.1rem);
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+.post .post-body h3 { font-size: 1.25rem; }
+.to-top {
+  display: inline-block;
+  margin-bottom: 3rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.to-top:hover { color: var(--accent); }
+.post:target .post-title-lg { color: var(--accent); }
+
 .post-footer {
   display: flex;
   justify-content: space-between;

@@ -34,33 +34,238 @@
       </header>
 
       <!-- ══ HOW TO ADD A POST ══════════════════════════════
-           1. Create p/your-slug.html (copy an existing post file).
-           2. Copy one .post-row block below, change the date,
-              href and title, and put it at the TOP of the right
-              year group.
-           3. If it's one of the newest posts, add the same block
-              to the "Recent posts" list in index.html too.
+           Every post lives on this page. Two steps:
+
+           1. Add a row to the TOP of the list below. The href
+              is "#" + an id you make up (lowercase, dashes):
 
            <div class="post-row">
-             <span class="post-date">Mon DD</span>
-             <a class="post-title" href="p/your-slug.html">Your Post Title</a>
-             <span class="post-tag">tag</span>
+             <span class="post-date">Mon DD, YYYY</span>
+             <a class="post-title" href="#your-slug">Your Post Title</a>
            </div>
+
+           2. Copy a whole <article class="post"> block further
+              down, paste it ABOVE the newest one, and give it
+              the same id (without the #). Change the date and
+              title and write the post.
+
+           Optional: add the same row to "Recent posts" in
+           index.html, with href="blog.html#your-slug".
            ═══════════════════════════════════════════════════ -->
-      <section class="posts-section">
+      <section class="posts-section" id="all-posts">
+        <p class="section-label">All posts</p>
 
-        <div class="year-group">
-          <p class="year-heading">2026</p>
-
-          <div class="post-row">
-            <span class="post-date">Mar 23</span>
-            <a class="post-title" href="p/the-point-of-a-blog.html">The point of a blog</a>
-            <span class="post-tag">life</span>
-          </div>
-
+        <div class="post-row">
+          <span class="post-date">Sep 18, 2026</span>
+          <a class="post-title" href="#getting-back-on-social-media">Debating whether to get back on social media</a>
         </div>
 
       </section>
+
+      <!-- ══ THE POSTS — newest at the top ══════════════════ -->
+
+      <article class="post" id="getting-back-on-social-media">
+        <header class="post-header">
+          <div class="post-meta">
+            <span>September 18, 2026</span>
+          </div>
+          <h2 class="post-title-lg">Debating whether to get back on social media</h2>
+        </header>
+
+        <div class="post-body">
+
+          <p><em>
+            I started writing the following past my bedtime. Re reading it, it
+            sounds a lot like a chain of thought trace from Claude.
+          </em></p>
+
+          <hr>
+
+          <p>
+            I'd gotten off social media a few years ago because it was doing
+            things to my brain which i wasn't a fan of. But now after maturing
+            and becoming an adult, I'm more confident i can control what i do on
+            these apps and want to get back on one. Plus, I have more friends now
+            and want to see what they get up to.
+          </p>
+
+          <p>
+            I'm interested in different types of social media and which ones to
+            get back on. Ideally there is a social media where i only see what my
+            friends are up to. What their current goals in life are- and maybe i
+            can talk to them further about it. I dont really want to see posts
+            from people i dont follow. What are my options?
+          </p>
+
+          <p>
+            Do i want to get news from social media? The risk is that i get a lot
+            of shallow posts that hit my dopamine centers but dont really deliver
+            any real substance. e.g. imagine i get a video of a rally against ai
+            acceleration in westminster. Ok thats cool information.
+          </p>
+
+          <p>
+            But then i might also just recieve a video of a news host blazing
+            against trump - even if i agree with the sentiment, the post is
+            delivering no real information. however id be drawn to watch the post
+            because it hits my dopamine centers. This is a waste of time. Overall,
+            with knowledge of such algorithms, I'm not going to use social media
+            as a news source and stick to the economist instead.
+          </p>
+
+          <p>
+            If I want social media to help my friendships survive i should
+            clarify what a friendship is meant to be. A friendship between two
+            people is meant to facilitate the growth of both persons, so that they
+            can support each other in hard times and appreciate each other in good
+            times. Erich Fromm lays out four pillars in <em>The Art of Loving</em>
+            which i try to follow: care, knowledge, responsibility and respect.
+          </p>
+
+          <ul>
+            <li>
+              <strong>Knowledge</strong> is deducing that the other might be
+              feeling a certain way, depressed or joyful, based on social cues. In
+              my opinion, any intelligence you might cultivate studying maths at
+              school is aimed at improving one's ability to perform this supreme
+              task.
+            </li>
+            <li>
+              <strong>Care</strong> is an active concern for the other person's
+              growth. Like realising they want to be a better public speaker and
+              so giving them feedback or pointing them to useful resources.
+            </li>
+            <li>
+              <strong>Responsibility</strong> is acting when the other is in
+              emotional or physical distress. It's knowing your friend is feeling
+              depressed and making the choice that you want to do something about
+              it rather than ignore it, which is much easier.
+            </li>
+            <li>
+              <strong>Respect</strong> is the desire to see the other person
+              become who they are meant to be, without projecting any of my own
+              certainties onto the process.
+            </li>
+          </ul>
+
+          <p>
+            Knowledge is the bedrock of the latter three aspects and what social
+            media should be primed to enable. I want to know what my friends are
+            gunning for at the moment, what they've achieved. I want to learn
+            their ups and their downs. Where they're travelling and what hobbies
+            they're picking up. I want to see them when they feel beautiful and
+            when they're around those they love. Then i can choose to reach out
+            and learn more or provide any help I'm capable of.
+          </p>
+
+          <p>
+            The biggest barrier to social media being useful is to actually get
+            my friends on these platforms and to post on them. So, I'll consider
+            the big sites like Instagram, facebook etc where people will already
+            be on. I'm very happy with instagram's following only feed where they
+            only show me posts from the people i follow. I dont think they had
+            this 2-3 years ago, and i deleted the app because i started getting
+            reels on my feed without my asking for them, and i'd decided to get
+            off reels to save my brain. But now i think instagram would be a good
+            candidate. To be honest i never used facebook, it always felt before
+            my time, sorry older friends:( There are also things like substack,
+            linkedin and twitter. Substack is cool - I like reading essays from
+            people i haven't met before on topics I haven't encountered. But a lot
+            of friends aren't on the app or into writing:( Substack could be an
+            adjacent tool to use alongside instagram. And a great way to connect
+            with people i know who are on it. Twitter and Linkedin also have
+            different media types to what I'm really looking for here, but still
+            useful, so they might be adjacently used.
+          </p>
+
+          <p>
+            Regarding any criterion for the type of content i want to see from
+            people i know, the analysis above implies that any post from friends
+            is welcome. The next question is: who do i want to see content from?
+            We have celebrities, acquaintances, friends i've lost touch with,
+            current best friends and so on. I'm happy for anyone to follow me on
+            instagram if they're interested for whatever reason, but who do i
+            spend my precious time focusing on?
+          </p>
+
+          <p>
+            Personally, I'm not interested in seeing celebrities' posts on my feed
+            so I'll make sure not to follow any. The only reason to follow an
+            influencer would be because there is something they do that I want to
+            emulate, e.g. maybe they're a really nice person and i want to be like
+            them. For me this type of information comes across better on youtube
+            rather than on short instagram posts. So ill push influencers off my
+            instagram feed. Note that if you're into fashion etc. then short
+            influencer posts might be perfect to inspire you and so might be good
+            to see.
+          </p>
+
+          <p>
+            I know I want to follow friends I'm in contact with now. But what
+            about those I've lost contact with? I've moved schools a lot, so there
+            are a lot of old friends i've havent talked to in years. I think you'd
+            want to follow people you've lost contact with because having known
+            them once is a good reason to establish contact with them again. Why
+            would you not establish contact with someone? I might not do so
+            because I'm scared or lazy but it allows for the possibility in the
+            future. What about people i don't like or am ambivalent about?
+            Regarding the latter, it's always better to be friends with someone
+            than to be ambivalent, so you could always reach out and convert an
+            ambivalent person into a friend or someone you don't like. The next
+            part is tricky. Do you follow people you don't like? What does it mean
+            to 'dislike' someone anyway?
+          </p>
+
+          <p>
+            It's more complicated than to say disliking is the opposite of liking
+            someone. Philosophers, I'm not sure who, have said that hate is not
+            the opposite of love but instead the same thing. You hate someone when
+            your love is not returned. The love i mean here is a desire for
+            attention and to be loved. When you don't get that love, the only way
+            to maintain self importance is to believe the object you wanted love
+            from was bad anyway and thats why they don't love you. Hence like
+            becomes dislike. However i dont think real love is the pleasure you
+            feel when you recieve attention, but rather the feeling when you give
+            to someone else, unconditional of whether they return it. In the ideal
+            case, hate ceases to be. If hate isn't the opposite of love then
+            perhaps it's ambivalence, others say. But we addressed ambivalence
+            above. You have to make the choice to become friends with someone
+            rather than remain ambivalent.
+          </p>
+
+          <p>
+            There can still be people whose actions are destructive and don't
+            appear to be tending towards positive outcomes according to your own
+            beliefs. E.g. I might see someone shouting racist slurs on the street
+            and want them to stop. But I'm not sure if what i feel in this
+            instance is 'hate' per se. It's more a sort of understanding that what
+            I'm seeing in front of me needs to stop and that I should do something
+            about it, e.g. tell the person to stop shouting racist slurs. But i
+            don't feel hate, i just feel like some misunderstanding has happened
+            and needs to be resolved and i feel upset about this.
+          </p>
+
+          <p>
+            This means i still ought to follow people i know personally that I
+            'dislike', because actually i supposedly still like them. I should
+            even follow people i know whose actions i disagree with, in the hope
+            that i can get them to change their actions. I'll probably draw the
+            line at following people i dont personally know whose content i don't
+            think is right, because there's a low chance i can get them to change
+            and now my feed is just making me upset.
+          </p>
+
+          <p>
+            To conclude, I've said I want to follow people I personally know but
+            not any celebrities. I want to follow people who i've had even the
+            slightest contact with in the hope of getting to know them more, even
+            if i dislike them or disagree with them. Let's see how that goes:)
+          </p>
+
+        </div>
+
+        <a class="to-top" href="#all-posts">↑ Back to all posts</a>
+      </article>
 
     </div><!-- /.wrap -->
   </main>
