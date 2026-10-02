@@ -378,6 +378,10 @@ nav a.active { color: var(--ink); }
    when you jump to a post from the list. */
 .post, #all-posts { scroll-margin-top: 4rem; }
 .post { border-top: 1px solid var(--border); }
+/* the last row of the post list already draws a line,
+   so the first post skips its own to avoid a double rule */
+#all-posts { padding-bottom: 1rem; }
+#all-posts + .post { border-top: 0; }
 .post .post-header { border-bottom: 0; padding-bottom: 0; }
 .post .post-meta { margin-bottom: 0.75rem; }
 .post-title-lg {
