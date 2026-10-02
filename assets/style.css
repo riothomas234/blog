@@ -377,7 +377,8 @@ nav a.active { color: var(--ink); }
 .post-body img { max-width: 100%; height: auto; border-radius: var(--radius); }
 .post-body figure img { display: block; width: 100%; }
 /* portrait or small images: centre at a narrower width */
-.post-body figure.narrow { max-width: 340px; margin-left: auto; margin-right: auto; }
+.post-body figure.narrow img { max-width: 220px; margin: 0 auto; }
+.post-body figure.narrow figcaption { max-width: 420px; }
 .post-body figcaption {
   display: block;
   max-width: 90%;
