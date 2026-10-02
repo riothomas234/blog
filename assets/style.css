@@ -114,6 +114,9 @@ nav a.active { color: var(--ink); }
   padding: 3.5rem 0 3rem;
   border-bottom: 1px solid var(--border);
 }
+/* when the hero is the last thing on the page, the footer's
+   line is enough — skip this one to avoid a double rule */
+.hero:last-child { border-bottom: 0; }
 .hero-grid {
   display: grid;
   grid-template-columns: 240px 1fr;
