@@ -383,6 +383,8 @@ nav a.active { color: var(--ink); }
 .post-body figure.diagram img { width: auto; max-width: 100%; max-height: 300px; margin: 0 auto; }
 .post-body figure.pair img { width: auto; max-width: 100%; max-height: 220px; margin: 0 auto; }
 .post-body figure.pair img + img { margin-top: 0.75rem; }
+/* LaTeX blocks (rendered by KaTeX); scroll sideways on narrow screens */
+.post-body .math { overflow-x: auto; overflow-y: hidden; color: var(--ink); }
 /* stand-in box until a figure's image is added */
 .figure-placeholder {
   border: 1px dashed var(--border);
