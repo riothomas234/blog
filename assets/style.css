@@ -201,7 +201,7 @@ nav a.active { color: var(--ink); }
   font-weight: 500;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--accent);
   margin-bottom: 1.25rem;
 }
 .cards-grid {
@@ -257,7 +257,7 @@ nav a.active { color: var(--ink); }
   border-bottom: 1px solid var(--border);
   animation: fadeUp 0.4s ease both;
 }
-.post-row:hover .post-title { color: var(--accent); }
+.post-row:hover .post-title { color: var(--ink); }
 
 .post-date {
   font-size: 0.75rem;
@@ -269,7 +269,7 @@ nav a.active { color: var(--ink); }
 .post-title {
   font-family: var(--serif);
   font-size: 0.98rem;
-  color: var(--ink);
+  color: var(--accent);
   text-decoration: none;
   transition: color 0.15s;
   line-height: 1.4;
@@ -421,8 +421,8 @@ nav a.active { color: var(--ink); }
   font-weight: 600;
   line-height: 1.25;
   letter-spacing: -0.02em;
+  color: var(--accent);
 }
-.post:target .post-title-lg { color: var(--accent); }
 .post .post-body h3 { font-size: 1.25rem; }
 .to-top {
   display: inline-block;
@@ -464,7 +464,7 @@ nav a.active { color: var(--ink); }
   font-weight: 500;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--accent);
   padding-bottom: 0.5rem;
   border-bottom: 1px solid var(--border);
   margin-bottom: 1.25rem;
