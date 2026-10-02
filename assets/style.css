@@ -380,8 +380,8 @@ nav a.active { color: var(--ink); }
 .post-body figure.narrow img { max-width: 220px; margin: 0 auto; }
 .post-body figure.narrow figcaption { max-width: 420px; }
 /* diagrams and the stacked tablet + sketch pair: centred, smaller */
-.post-body figure.diagram img { max-width: 420px; margin: 0 auto; }
-.post-body figure.pair img { max-width: 300px; margin: 0 auto; }
+.post-body figure.diagram img { width: auto; max-width: 100%; max-height: 300px; margin: 0 auto; }
+.post-body figure.pair img { width: auto; max-width: 100%; max-height: 220px; margin: 0 auto; }
 .post-body figure.pair img + img { margin-top: 0.75rem; }
 /* stand-in box until a figure's image is added */
 .figure-placeholder {
@@ -422,6 +422,7 @@ nav a.active { color: var(--ink); }
   line-height: 1.25;
   letter-spacing: -0.02em;
 }
+.post:target .post-title-lg { color: var(--accent); }
 .post .post-body h3 { font-size: 1.25rem; }
 .to-top {
   display: inline-block;
