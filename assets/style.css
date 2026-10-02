@@ -504,6 +504,10 @@ nav a.active { color: var(--ink); }
    that are specific to projects.html. */
 .projects .cv-section { scroll-margin-top: 4rem; }
 
+/* the first section heading already draws a line, so the
+   page header skips its own to avoid a double rule */
+.page-header.no-rule { border-bottom: 0; padding-bottom: 0; }
+
 .page-header .jump-links { margin-top: 0.75rem; font-size: 0.8rem; }
 .jump-links a { color: var(--muted); text-decoration: none; }
 .jump-links a:hover { color: var(--accent); }
