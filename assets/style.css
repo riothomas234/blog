@@ -379,6 +379,19 @@ nav a.active { color: var(--ink); }
 /* portrait or small images: centre at a narrower width */
 .post-body figure.narrow img { max-width: 220px; margin: 0 auto; }
 .post-body figure.narrow figcaption { max-width: 420px; }
+/* diagrams and the stacked tablet + sketch pair: centred, smaller */
+.post-body figure.diagram img { max-width: 420px; margin: 0 auto; }
+.post-body figure.pair img { max-width: 300px; margin: 0 auto; }
+.post-body figure.pair img + img { margin-top: 0.75rem; }
+/* stand-in box until a figure's image is added */
+.figure-placeholder {
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+  padding: 2.5rem 1rem;
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
 .post-body figcaption {
   display: block;
   max-width: 90%;
