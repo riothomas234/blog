@@ -375,6 +375,13 @@ nav a.active { color: var(--ink); }
 .post-body pre code { background: none; border: 0; padding: 0; }
 .post-body hr { border: 0; border-top: 1px solid var(--border); margin: 2rem 0; }
 .post-body img { max-width: 100%; height: auto; border-radius: var(--radius); }
+.post-body figure img { display: block; width: 100%; }
+.post-body figcaption {
+  margin-top: 0.6rem;
+  font-size: 0.78rem;
+  color: var(--muted);
+  text-align: center;
+}
 
 /* ── STACKED POSTS (blog.html) ──────────────────────────── */
 /* scroll-margin keeps the title clear of the sticky nav
