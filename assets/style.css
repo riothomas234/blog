@@ -441,7 +441,6 @@ nav a.active { color: var(--ink); }
   display: flex;
   align-items: baseline;
   gap: 1rem;
-  flex-wrap: wrap;
 }
 .cv-entry-head h3 {
   font-family: var(--serif);
@@ -681,6 +680,7 @@ footer a:hover { color: var(--accent); }
   .post-tag { display: none; }
   .post-date { min-width: 56px; font-size: 0.7rem; }
   .cv-row { grid-template-columns: 1fr; gap: 0.15rem; }
+  .cv-entry-head { flex-wrap: wrap; }
   .cv-date { margin-left: 0; width: 100%; }
   .post-footer a { max-width: 100%; }
   nav .wrap { gap: 1rem; }
