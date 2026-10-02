@@ -421,7 +421,6 @@ nav a.active { color: var(--ink); }
   transition: color 0.15s;
 }
 .to-top:hover { color: var(--accent); }
-.post:target .post-title-lg { color: var(--accent); }
 
 .post-footer {
   display: flex;
