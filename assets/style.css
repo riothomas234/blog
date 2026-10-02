@@ -423,7 +423,7 @@ nav a.active { color: var(--ink); }
   font-weight: 600;
   line-height: 1.25;
   letter-spacing: -0.02em;
-  color: var(--accent);
+  color: var(--ink);
 }
 .post .post-body h3 { font-size: 1.25rem; }
 .to-top {
