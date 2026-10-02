@@ -93,6 +93,7 @@ nav .site-name {
   color: var(--ink);
   text-decoration: none;
   margin-right: auto;
+  white-space: nowrap;
   letter-spacing: -0.01em;
 }
 nav .site-name:hover { color: var(--accent); }
@@ -499,6 +500,126 @@ nav a.active { color: var(--ink); }
   max-width: 560px;
 }
 
+/* ── PROJECTS ───────────────────────────────────────────── */
+/* Reuses the CV section/entry styles; these add the bits
+   that are specific to projects.html. */
+.projects .cv-section { scroll-margin-top: 4rem; }
+
+.page-header .jump-links { margin-top: 0.75rem; font-size: 0.8rem; }
+.jump-links a { color: var(--muted); text-decoration: none; }
+.jump-links a:hover { color: var(--accent); }
+
+.project-links {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.project-links a { text-decoration: none; }
+.project-links a:hover { text-decoration: underline; }
+
+/* posters: thumbnail cards */
+.poster-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 1.25rem;
+}
+.poster {
+  display: block;
+  text-decoration: none;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: background 0.15s, border-color 0.15s;
+}
+.poster:hover { background: var(--surface-2); border-color: var(--accent-dim); }
+.poster-thumb {
+  aspect-ratio: 1 / 1.414;   /* A-series portrait */
+  display: grid;
+  place-items: center;
+  border-bottom: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+.poster-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+.poster-info { padding: 0.85rem 1rem 1rem; }
+.poster-info h3 {
+  font-family: var(--serif);
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.35;
+}
+.poster:hover .poster-info h3 { color: var(--accent); }
+.poster-info p {
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin-top: 0.25rem;
+}
+
+/* code: repo cards */
+.code-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.code-card {
+  background: var(--surface);
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  transition: background 0.15s;
+}
+.code-card:hover { background: var(--surface-2); }
+.code-card h3 {
+  font-family: var(--serif);
+  font-size: 0.98rem;
+  font-weight: 600;
+}
+.code-card h3 a { color: var(--ink); text-decoration: none; }
+.code-card h3 a:hover { color: var(--accent); }
+.code-card p {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  margin-top: 0.4rem;
+  line-height: 1.55;
+  flex: 1;
+}
+.code-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 1rem;
+}
+.code-tag {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  padding: 0.1em 0.45em;
+}
+.code-link {
+  margin-left: auto;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.code-link:hover { text-decoration: underline; }
+
 /* ── EMPTY STATE ────────────────────────────────────────── */
 .empty {
   border: 1px dashed var(--border);
@@ -561,6 +682,7 @@ footer a:hover { color: var(--accent); }
   .cv-row { grid-template-columns: 1fr; gap: 0.15rem; }
   .cv-date { margin-left: 0; width: 100%; }
   .post-footer a { max-width: 100%; }
+  nav .wrap { gap: 1rem; }
 }
 
 /* ── PRINT (so the CV prints cleanly) ───────────────────── */

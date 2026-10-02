@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="description" content="Rio Thomas — reports, posters and code." />
+  <title>Projects — Rio Thomas</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+
+<body>
+
+  <nav>
+    <div class="wrap">
+      <a class="site-name" href="index.html">Rio Thomas</a>
+      <a href="index.html">Home</a>
+      <a href="blog.html">Blog</a>
+      <a class="active" href="projects.html">Projects</a>
+      <a href="cv.html">CV</a>
+    </div>
+  </nav>
+
+  <main>
+    <div class="wrap">
+
+      <header class="page-header">
+        <a class="back-link" href="index.html">← Home</a>
+        <h1>Projects</h1>
+        <p>Reports and papers, posters, and the code behind them.</p>
+        <p class="jump-links">
+          <a href="#reports">Reports</a> ·
+          <a href="#posters">Posters</a> ·
+          <a href="#code">Code</a>
+        </p>
+      </header>
+
+      <!-- ══ HOW TO ADD A PROJECT ═══════════════════════════
+           Put files in assets/projects/ (PDFs, poster images).
+           Then copy a block in the right section below and
+           change the [square-bracket] bits. Newest at the top.
+           Remove any link you don't have (e.g. no "Code" link
+           on a report without a repo).
+           ═══════════════════════════════════════════════════ -->
+      <div class="cv projects">
+
+        <!-- ── REPORTS & PAPERS ───────────────────────── -->
+        <section class="cv-section" id="reports">
+          <h2>Reports &amp; papers</h2>
+
+          <div class="cv-entry">
+            <div class="cv-entry-head">
+              <h3>Tamper-proof logs for benchtop DNA synthesisers</h3>
+              <span class="cv-date">2026</span>
+            </div>
+            <p class="cv-org">Workshop paper · ERA AIxBio Fellowship</p>
+            <p>
+              The threat model and cryptographic design for a tamper-proof
+              synthesis log. A Merkle tree anchored in a trusted platform module
+              stops a malicious operator who synthesises a viral sequence from
+              rewriting the records to hide it.
+            </p>
+            <p class="project-links">
+              <a href="#">PDF</a>
+              <a href="#">arXiv</a>
+            </p>
+          </div>
+
+          <div class="cv-entry">
+            <div class="cv-entry-head">
+              <h3>Evaluations for protein design tools: a literature review</h3>
+              <span class="cv-date">[2026]</span>
+            </div>
+            <p class="cv-org">Co-authored literature review</p>
+            <p>
+              [One or two lines: what the review covers and what it concludes.]
+            </p>
+            <p class="project-links">
+              <a href="#">PDF</a>
+            </p>
+          </div>
+
+        </section>
+
+        <!-- ── POSTERS ────────────────────────────────── -->
+        <!-- For the thumbnail, export the poster as a JPG/PNG into
+             assets/projects/ and swap the placeholder div for:
+             <img src="assets/projects/your-poster.jpg" alt="[Poster title]" /> -->
+        <section class="cv-section" id="posters">
+          <h2>Posters</h2>
+
+          <div class="poster-grid">
+
+            <a class="poster" href="#">
+              <div class="poster-thumb">
+                <span>Poster preview</span>
+              </div>
+              <div class="poster-info">
+                <h3>[Poster title]</h3>
+                <p>[Event or conference] · [2026]</p>
+              </div>
+            </a>
+
+          </div>
+        </section>
+
+        <!-- ── CODE ───────────────────────────────────── -->
+        <section class="cv-section" id="code">
+          <h2>Code</h2>
+
+          <div class="code-grid">
+
+            <div class="code-card">
+              <h3><a href="https://github.com/riothomas234/blog">This website</a></h3>
+              <p>Hand-written HTML and CSS, no framework, hosted on GitHub Pages.</p>
+              <div class="code-meta">
+                <span class="code-tag">HTML</span>
+                <span class="code-tag">CSS</span>
+                <a class="code-link" href="https://github.com/riothomas234/blog">GitHub →</a>
+              </div>
+            </div>
+
+            <div class="code-card">
+              <h3><a href="#">[Project name]</a></h3>
+              <p>[What it is, what you built it with, and why.]</p>
+              <div class="code-meta">
+                <span class="code-tag">Python</span>
+                <a class="code-link" href="#">GitHub →</a>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+      </div><!-- /.projects -->
+
+    </div><!-- /.wrap -->
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>© 2026 Rio Thomas</span>
+      <span>
+        <a href="index.html">Home</a> ·
+        <a href="blog.html">Blog</a> ·
+        <a href="https://github.com/riothomas234">GitHub</a>
+      </span>
+    </div>
+  </footer>
+
+</body>
+</html>
